@@ -17,7 +17,7 @@ const scene = new THREE.Scene();
 
 ///--- FOG (color,near,far) //distances are from the camera
 //also check th renderer for the color
-const fog = new THREE.Fog("#262837", 0.5, 15);
+const fog = new THREE.Fog("#262837", 0, 15);
 scene.fog = fog;
 /**
  * Textures
@@ -235,8 +235,8 @@ window.addEventListener("resize", () => {
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
 camera.position.x = 4;
-camera.position.y = 2;
-camera.position.z = 5;
+camera.position.y = 4;
+camera.position.z = 8;
 scene.add(camera);
 
 // Controls
@@ -258,6 +258,7 @@ renderer.setClearColor("#262837"); // to increase the effect of the fog's color
  */
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
 //--Lights
 moonLight.castShadow = true;
 doorLight.castShadow = true;
